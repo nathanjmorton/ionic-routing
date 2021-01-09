@@ -64,6 +64,10 @@ const AddEntryPage: React.FC = () => {
             />
           </IonItem>
           <IonItem>
+            <IonLabel position='stacked'>Picture</IonLabel>
+            <img src='/assets/placeholder.png' alt='' />
+          </IonItem>
+          <IonItem>
             <IonLabel position='stacked'>Description</IonLabel>
             <IonTextarea
               value={description}
