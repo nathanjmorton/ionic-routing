@@ -14,6 +14,7 @@ import { useAuth } from './auth';
 import HomePage from './pages/HomePage';
 import SettingsPage from './pages/SettingsPage';
 import EntryPage from './pages/EntryPage';
+import AddEntryPage from './pages/AddEntryPage';
 
 const AppTabs: React.FC = () => {
   const { loggedIn } = useAuth();
@@ -26,7 +27,10 @@ const AppTabs: React.FC = () => {
         <Route exact path='/my/entries'>
           <HomePage />
         </Route>
-        <Route exact path='/my/entries/:id'>
+        <Route exact path='/my/entries/add'>
+          <AddEntryPage />
+        </Route>
+        <Route exact path='/my/entries/view/:id'>
           <EntryPage />
         </Route>
         <Route exact path='/my/settings'>
