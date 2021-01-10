@@ -13,6 +13,7 @@ import {
   IonTextarea,
   IonTitle,
   IonToolbar,
+  isPlatform,
 } from '@ionic/react';
 import { CameraResultType, Plugins } from '@capacitor/core';
 import React, { useEffect, useRef, useState } from 'react';
@@ -56,14 +57,17 @@ const AddEntryPage: React.FC = () => {
   };
 
   const handlePictureClick = async () => {
-    // fileInputRef.current.click();
-    try {
-      const photo = await Camera.getPhoto({
-        resultType: CameraResultType.Uri,
-      });
-      setPictureUrl(photo.webPath);
-    } catch (err) {
-      console.log('camera error: ', err);
+    if (isPlatform('capacitor')) {
+      try {
+        const photo = await Camera.getPhoto({
+          resultType: CameraResultType.Uri,
+        });
+        setPictureUrl(photo.webPath);
+      } catch (err) {
+        console.log('camera error: ', err);
+      }
+    } else {
+      fileInputRef.current.click();
     }
   };
 

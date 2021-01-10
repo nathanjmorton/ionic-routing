@@ -13,6 +13,7 @@ const App: React.FC = () => {
   if (loading) {
     return <IonLoading isOpen />;
   }
+  console.log('rendering App with auth:', auth);
   return (
     <IonApp>
       <AuthContext.Provider value={auth}>
