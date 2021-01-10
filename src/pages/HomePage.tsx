@@ -37,7 +37,7 @@ const HomePage: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Home Page</IonTitle>
+          <IonTitle>Daily Moments!</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className='ion-padding'>
